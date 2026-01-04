@@ -1,8 +1,14 @@
 package com.example.wordapp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.HashMap;
+
 public class Account {
     private String accountId;
+    @JsonIgnore
     private String password;
+    private final HashMap<String, String> wordDic = new HashMap<String, String>();
 
     public Account(String aid, String pass) {
         accountId = aid;
@@ -23,6 +29,10 @@ public class Account {
 
     public String getPassword() {
         return password;
+    }
+
+    public HashMap<String, String> getWords() {
+        return wordDic;
     }
 
 }
