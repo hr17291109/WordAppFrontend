@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LessonServer">
         <activity
-            android:name=".views.AccountListActivity"
+            android:name=".views.WordListActivity"
             android:exported="false" />
         <activity
             android:name=".views.SettingActivity"

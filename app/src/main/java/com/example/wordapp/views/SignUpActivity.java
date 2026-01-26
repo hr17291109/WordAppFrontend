@@ -49,11 +49,13 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = editPassword.getText().toString().trim();
                 String username = editUsername.getText().toString().trim();
 
-                Call<Void> call = accountsRest.signup(username,password);
+                Call<Void> call = accountsRest.signup(username, password);
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        Intent intent = new Intent(SignUpActivity.this, SettingActivity.class);
+                        Intent intent = new Intent(SignUpActivity.this, WordListActivity.class);
+                        intent.putExtra("account_id", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
 

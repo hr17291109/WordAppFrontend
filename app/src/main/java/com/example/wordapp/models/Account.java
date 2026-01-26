@@ -8,11 +8,13 @@ public class Account {
     private String accountId;
     @JsonIgnore
     private String password;
-    private final HashMap<String, String> wordDic = new HashMap<String, String>();
+    private HashMap<String, String> wordDic = new HashMap<String, String>();
 
-    public Account(String aid, String pass) {
+    public Account () {
+    }
+    public Account(String aid, HashMap<String, String> words) {
         accountId = aid;
-        password = pass;
+        wordDic = words;
     }
 
     public String getAccountId() {
@@ -33,6 +35,10 @@ public class Account {
 
     public HashMap<String, String> getWords() {
         return wordDic;
+    }
+
+    public void setWords(HashMap<String, String> words) {
+        wordDic = words;
     }
 
 }

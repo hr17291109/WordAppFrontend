@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.DELETE;
 import retrofit2.http.Query;
 
 public interface AccountsRest {
@@ -34,6 +35,23 @@ public interface AccountsRest {
             @Path("account_id") String account_id,
             @Field("new_password") String new_password,
             @Field("old_password") String old_password
+    );
+
+    @FormUrlEncoded
+    @POST("accounts/{account_id}/words")
+    Call<Void> addWord(
+            @Path("account_id") String account_id,
+            @Field("password") String password,
+            @Field("English_word") String newEnWord,
+            @Field("new_Japanese_meaning") String JpMeaning
+    );
+
+    //@FormUrlEncoded
+    @DELETE("accounts/{account_id}/words")
+    Call<Void> deleteWord(
+            @Path("account_id") String account_id,
+            @Query("password") String password,
+            @Query("English_word") String Enword
     );
 
 
