@@ -18,14 +18,6 @@
     * パスワードの変更機能。
     * 入力時のパスワード非表示/表示切り替え (Eye Icon)。
 
-## 📱 スクリーンショット (Screenshots)
-
-| Sign In | Word List | Add Word | Everyone's Words |
-|:---:|:---:|:---:|:---:|
-| <img src="images/signin.png" width="200"> | <img src="images/list.png" width="200"> | <img src="images/add.png" width="200"> | <img src="images/all.png" width="200"> |
-
-> ※ `images` フォルダを作成し、実際のスクリーンショット画像（signin.pngなど）を配置してください。
-
 ## 🛠 使用技術 (Tech Stack)
 
 **Frontend (Android)**
@@ -74,7 +66,7 @@
 
 ## 👤 著者 (Author)
 
-* [あなたの名前]
+* 新田悠翔
 * Affiliation: Kyoto Sangyo University
 
 ## 📝 ライセンス (License)
