@@ -101,7 +101,8 @@ public class WordListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // 1. SignUp画面へのIntentを作成
-                Intent intent = new Intent(WordListActivity.this, SignUpActivity.class);
+                // Intent intent = new Intent(WordListActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(WordListActivity.this, SignInActivity.class);
 
                 // 2. ★重要: これまでの画面履歴を消去するフラグ
                 // これを入れないと、ログアウト後に「戻るボタン」でまたリストが見れてしまいます

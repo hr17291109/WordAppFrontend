@@ -34,7 +34,7 @@ public interface AccountsRest {
     Call<Void> changePW(
             @Path("account_id") String account_id,
             @Field("new_password") String new_password,
-            @Field("old_password") String old_password
+            @Field("old_password") String password
     );
 
     @FormUrlEncoded

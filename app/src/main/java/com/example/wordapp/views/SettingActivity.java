@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -79,7 +80,14 @@ public class SettingActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
                         if (response.isSuccessful()) {
-                            ((TextView) findViewById(R.id.testView_error2)).setText("パスワードが変更されました");
+                            Toast.makeText(SettingActivity.this, "変更しました。再ログインしてください", Toast.LENGTH_LONG).show();
+                            // SignInActivity へ移動
+                            Intent intent = new Intent(SettingActivity.this, SignInActivity.class);
+                            // 履歴を消して戻れないようにする
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish(); // 設定画面を閉じる
+                            //((TextView) findViewById(R.id.testView_error2)).setText("パスワードが変更されました");
                         } else {
                             ((TextView) findViewById(R.id.testView_error2)).setText("パスワードが違います");
                         }
